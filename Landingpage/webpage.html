@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Food Ordering</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            background-color: #f8f8f8;
+        }
+
+        header {
+            background-color: #333;
+            color: #fff;
+            padding: 20px;
+            text-align: center;
+        }
+
+        .menu-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px;
+            border-bottom: 1px solid #ddd;
+        }
+
+        .menu-item img {
+            max-width: 100px;
+            margin-right: 20px;
+        }
+
+        .order-form {
+            max-width: 600px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .order-form label {
+            display: block;
+            margin-bottom: 10px;
+        }
+
+        .order-form input,
+        .order-form select {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 20px;
+            box-sizing: border-box;
+        }
+
+        .order-form button {
+            background-color: #4CAF50;
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        footer {
+            background-color: #eee;
+            padding: 20px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header -->
+    <header>
+        <h1>Food Ordering System</h1>
+        <p>Order delicious food online</p>
+    </header>
+
+    <!-- Menu -->
+    <div class="menu-item">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/91/Pizza-3007395.jpg/1200px-Pizza-3007395.jpg" alt="Pizza">
+        <div>
+            <h2>Pizza</h2>
+            <p>Delicious pizza with your favorite toppings.</p>
+            <p>$10.99</p>
+        </div>
+    </div>
+
+    <div class="menu-item">
+        <img src="https://www.foodandwine.com/thmb/DI29Houjc_ccAtFKly0BbVsusHc=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/crispy-comte-cheesburgers-FT-RECIPE0921-6166c6552b7148e8a8561f7765ddf20b.jpg" alt="Burger">
+        <div>
+            <h2>Burger</h2>
+            <p>Classic beef burger with cheese and veggies.</p>
+            <p>$8.99</p>
+        </div>
+    </div>
+
+    <!-- Order Form -->
+    <div class="order-form">
+        <h2>Place Your Order</h2>
+        <form id="foodOrderForm">
+            <label for="itemName">Item Name:</label>
+            <input type="text" id="itemName" name="itemName" required>
+
+            <label for="quantity">Quantity:</label>
+            <input type="number" id="quantity" name="quantity" min="1" required>
+
+            <label for="comments">Additional Comments:</label>
+            <textarea id="comments" name="comments"></textarea>
+
+            <button type="submit">Place Order</button>
+        </form>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2023 Food Ordering System. All rights reserved.</p>
+    </footer>
+
+    <!-- JavaScript for form submission (example using alert) -->
+    <script>
+        document.getElementById('foodOrderForm').addEventListener('submit', function (event) {
+            event.preventDefault();
+            alert('Order placed successfully!\n\nDetails:\nItem: ' + this.itemName.value +
+                '\nQuantity: ' + this.quantity.value +
+                '\nComments: ' + this.comments.value);
+        });
+    </script>
+
+</body>
+</html>
